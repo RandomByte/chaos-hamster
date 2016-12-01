@@ -5,7 +5,7 @@ Traverses through objects starting at `window` while randomly executing function
 
 **Bookmarklet:**  
 ````js
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://randombyte.github.io//chaos-hamster/hamster.js';})();
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://randombyte.github.io/chaos-hamster/hamster.js';})();
 `````
 
 Inspired by [@Thodd](https://github.com/Thodd). Supported by [@matz3](https://github.com/matz3)
