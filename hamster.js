@@ -17,12 +17,24 @@ var Hamster = {
 		});
 	},
 
+	halt: function() {
+		this.bHalt = true;
+	},
+
+	checkHalt: function() {
+		if (this.bHalt) {
+			this.bHalt = false;
+			throw new Error("The Hamster stopped safely!");
+		}
+	},
+
 	traverse: function(oObject, iDepth) {
 		return new Promise(function(resolve) {
 			var sKey, aFunctions, aChilds, oChild, oFunctionCalled,
 				that = this;
 
 			window.console.log("Level " + iDepth);
+			this.checkHalt();
 
 			aFunctions = [];
 			aChilds = [];
@@ -31,7 +43,8 @@ var Hamster = {
 				if (oObject.hasOwnProperty && oObject.hasOwnProperty(sKey)) {
 					oChild = oObject[sKey];
 					if (typeof oChild === "function" &&
-							!(/\{\s*\[native code\]\s*\}/).test("" + oChild)) { // check for native functions
+							!(/\{\s*\[native code\]\s*\}/).test("" + oChild) && // check for native functions
+							oChild !== this.halt /*just making this one save*/) {
 						aFunctions.push(oChild);
 					} else if (typeof oChild === "object" && !!oChild /* for null n'stuff */ &&
 							!(oChild instanceof HTMLElement /* ignore DOM elements for now*/)) {
