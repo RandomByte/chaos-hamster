@@ -4,29 +4,42 @@
 	<title>chaos-hamster test page</title>
 </head>
 <body>
+	<h3>Some objects and functions:</h3>
+	<div id="demoCode"></div>
+	<h3>The hamster doing its thing:</h3>
 <script>
-	function insertNiceText (sText) {
-		var oElement;
+	var demo = function() {
+		function insertNiceText (sText) {
+			var oElement;
 
-		oElement = document.createElement("div");
-		oElement.innerHTML = "Nice text: " + sText;
+			oElement = document.createElement("div");
+			oElement.innerHTML = "Nice text: " + sText;
 
-		document.body.appendChild(oElement);
-	}
+			document.body.appendChild(oElement);
+		}
 
-	window.my = {
-		great: {
-			stuff: undefined,
-			deep: {
-				pony: 42,
-				object: {
-					withFunctions: function(arg1, arg2) {
-						insertNiceText(arg1 + "DEEP " + arg2);
+		window.my = {
+			great: {
+				stuff: undefined,
+				deep: {
+					pony: 42,
+					object: {
+						withFunctions: function(arg1, arg2) {
+							insertNiceText(arg1 + "DEEP " + arg2);
+						}
 					}
 				}
 			}
-		}
+		};
 	};
+	var oElement;
+
+	oElement = document.createElement("div");
+	oElement.innerHTML = demo.toString();
+	document.getElementById("demoCode").appendChild(oElement);
+
+	demo();
 </script>
+<script src="https://randombyte.github.io/chaos-hamster/hamster.js"></script>
 </body>
 </html>

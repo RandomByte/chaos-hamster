@@ -8,6 +8,8 @@ It traverses through objects starting at `window` while randomly executing funct
 javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://randombyte.github.io/chaos-hamster/hamster.js';})();
 `````
 
+[Test Page](https://randombyte.github.io/chaos-hamster/testpage.html)
+
 ## Advanced usage
 To let the Hamster run on a specific object (and its children):
 
