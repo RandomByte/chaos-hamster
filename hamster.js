@@ -100,7 +100,7 @@ var Hamster = {
 	},
 
 	getRandomVariable: function() {
-		var i = this.getRandomInt(0, 3);
+		var i = this.getRandomInt(0, 4);
 		switch (i) {
 		case 0:
 			return "pony";
