@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chaos-hamster test page</title>
+</head>
+<body>
+<script>
+	function insertNiceText (sText) {
+		var oElement;
+
+		oElement = document.createElement("div");
+		oElement.innerHTML = "Nice text: " + sText;
+
+		document.body.appendChild(oElement);
+	}
+
+	window.my = {
+		great: {
+			stuff: undefined,
+			deep: {
+				pony: 42,
+				object: {
+					withFunctions: function(arg1, arg2) {
+						insertNiceText(arg1 + "DEEP " + arg2);
+					}
+				}
+			}
+		}
+	};
+</script>
+</body>
+</html>
