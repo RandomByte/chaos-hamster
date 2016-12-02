@@ -126,8 +126,12 @@ var Hamster = {
 		case 3:
 			return ["pony", 42];
 		case 4:
-			var elements = document.body.querySelectorAll("*");
-			return elements[this.getRandomInt(0, elements.length - 1)];
+			if (document.body) {
+				var elements = document.body.querySelectorAll("*");
+				return elements[this.getRandomInt(0, elements.length - 1)];
+			}
+		default:
+			return false;
 		}
 	}
 };
