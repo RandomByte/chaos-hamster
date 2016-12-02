@@ -113,7 +113,7 @@ var Hamster = {
 	},
 
 	getRandomVariable: function() {
-		var i = this.getRandomInt(0, 3);
+		var i = this.getRandomInt(0, 4);
 		switch (i) {
 		case 0:
 			return "pony";
@@ -125,7 +125,9 @@ var Hamster = {
 			};
 		case 3:
 			return ["pony", 42];
-		// TODO Maybe add random DOM node?
+		case 4:
+			var elements = document.body.querySelectorAll("*");
+			return elements[this.getRandomInt(0, elements.length - 1)];
 		}
 	}
 };
